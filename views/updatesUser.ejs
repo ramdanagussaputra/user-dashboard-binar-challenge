@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="css/dashboardStyle.css" />
+
+        <script defer src="js/index.js"></script>
+
+        <title>Update User</title>
+    </head>
+    <body>
+        <header class="header">
+            <a class="btn-newuser" role="button" href="/">
+                <div>Back</div>
+            </a>
+            <h1>Update User</h1>
+        </header>
+
+        <section class="form-container">
+            <form class="form">
+                <div class="form-item form-item--firstName">
+                    <label for="firstName">First Name</label>
+                    <input
+                        id="firstName"
+                        type="text"
+                        name="firstName"
+                        value="<%= user.firstName %>"
+                        required
+                    />
+                </div>
+
+                <div class="form-item form-item--lastName">
+                    <label for="lastName">Last Name</label>
+                    <input
+                        id="lastName"
+                        type="text"
+                        name="lastName"
+                        value="<%= user.lastName %>"
+                        required
+                    />
+                </div>
+
+                <div class="form-item form-item--username">
+                    <label for="username">Username</label>
+                    <input
+                        id="username"
+                        type="text"
+                        name="username"
+                        value="<%= user.username %>"
+                        required
+                    />
+                </div>
+
+                <div class="form-item form-item--password">
+                    <label for="password">Password</label>
+                    <input
+                        id="password"
+                        type="password"
+                        name="password"
+                        value="<%= user.password %>"
+                        required
+                    />
+                </div>
+
+                <div class="form-item form-item--email">
+                    <label for="email">Email</label>
+                    <input
+                        id="email"
+                        type="email"
+                        name="email"
+                        value="<%= user.email %>"
+                        required
+                    />
+                </div>
+
+                <div class="form-item form-item--city">
+                    <label for="city">City</label>
+                    <input
+                        id="city"
+                        type="text"
+                        name="city"
+                        value="<%= user.city %>"
+                        required
+                    />
+                </div>
+
+                <button
+                    class="btn-submit btn-submit--update"
+                    type="submit"
+                    data-id="<%= user._id %>"
+                >
+                    Save
+                </button>
+            </form>
+        </section>
+    </body>
+</html>

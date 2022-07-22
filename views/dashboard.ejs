@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="css/dashboardStyle.css" />
+
+        <script defer src="js/index.js"></script>
+
+        <title>Dashboard</title>
+    </head>
+    <body>
+        <header class="header">
+            <h1>User Data Dashboard</h1>
+
+            <a class="btn-newuser" role="button" href="/add-user">
+                <div>New User</div>
+            </a>
+        </header>
+
+        <article>
+            <section class="table">
+                <p class="tab-header">id</p>
+                <p class="tab-header">first name</p>
+                <p class="tab-header">last name</p>
+                <p class="tab-header">username</p>
+                <p class="tab-header">password</p>
+                <p class="tab-header">email</p>
+                <p class="tab-header">city</p>
+                <p class="tab-header"></p>
+                <p class="tab-header"></p>
+
+                <% users.forEach((user, i) => { %>
+
+                <p class="tab-body id"><%= i + 1 %></p>
+                <p class="tab-body firstname"><%= user.firstName %></p>
+                <p class="tab-body lastname"><%= user.lastName %></p>
+                <p class="tab-body username"><%= user.username %></p>
+                <p class="tab-body password">**********</p>
+                <p class="tab-body email"><%= user.email %></p>
+                <p class="tab-body address"><%= user.city %></p>
+                <a
+                    class="tab-body btn-tab btn-tab--edit"
+                    href="/update-user?id=<%= user._id %> "
+                >
+                    <div>EDIT</div>
+                </a>
+                <a class="tab-body btn-tab btn-tab--delete" data-id="<%= user._id %>">
+                    <div>DELETE</div>
+                </a>
+
+                <% }) %>
+            </section>
+        </article>
+    </body>
+</html>
